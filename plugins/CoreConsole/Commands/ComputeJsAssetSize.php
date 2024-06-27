@@ -157,6 +157,7 @@ class ComputeJsAssetSize extends ConsoleCommand
             "WooCommerceAnalytics",
             "AdvertisingConversionExport",
             "AnonymousPiwikUsageMeasurement",
+            "CurrentLocalTime"
         ];
 
         if ($plugin) {

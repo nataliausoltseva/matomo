@@ -1231,6 +1231,7 @@ Plugins[] = VisitorInterest
 Plugins[] = RssWidget
 Plugins[] = Feedback
 Plugins[] = Monolog
+Plugins[] = CurrentLocalTime
 
 Plugins[] = Login
 Plugins[] = TwoFactorAuth

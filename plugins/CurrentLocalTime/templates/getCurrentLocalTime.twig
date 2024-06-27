@@ -1,0 +1,32 @@
+<div>
+    <div id="local_time" style="text-align:center;" />
+    <script>
+        var timezone = "{{ timezone }}";
+        var delay = 1000; // 1000 microseconds equal to 1 second
+        getTime();
+        // setInterval executes passed function every second
+        setInterval(function () {
+            getTime();
+        }, delay);
+
+        function getTime() {
+            let newTime = '';
+            if (timezone.startsWith("U")) {
+                const offsetIndicator = timezone.split("UTC")[1];
+                // get the current time in the specified timezone
+                const currentTime = new Date().toLocaleString("sv-SE")
+                // find the timezone offset
+                const timezoneOffset = (new Date().getTimezoneOffset() / 60) * -1 //12
+                // get the difference between timezoneOffset and timezone
+                const difference = parseInt(timezone.split("UTC")[1]) - timezoneOffset
+                // get the time in the specified timezone
+                newTime = new Date(new Date().getTime() + difference * 3600 * 1000).toLocaleString("sv-SE")
+
+            } else {
+                newTime = new Date().toLocaleString("sv-SE", { timeZone: timezone });
+            }
+
+            document.getElementById("local_time").innerHTML = newTime.substring(newTime, newTime.length - 3) + " ({{ timezone }})";
+        }
+    </script>
+</div>

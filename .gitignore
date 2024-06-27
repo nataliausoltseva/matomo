@@ -100,3 +100,12 @@ docker-compose.yml
 /plugins/*/vue/dist/*.development.*
 /plugins/CoreVue/polyfills/dist/MatomoPolyfills.min.js.map
 /@types
+
+
+/dashboard
+/img
+test.html
+applications.html
+/webalizer
+/xampp
+bitnami.css
